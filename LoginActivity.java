@@ -1,1 +1,0 @@
-package com.mra.drivedemo; public class LoginActivity {}
