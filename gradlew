@@ -4,4 +4,6 @@
 ##############################################################################
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-exec "$DIR/gradle/wrapper/gradle-wrapper.jar" "$@"
+JAVA_EXEC="$(which java)"
+
+exec "$JAVA_EXEC" -cp "$DIR/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain "$@"
