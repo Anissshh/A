@@ -1,6 +1,15 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -11,11 +20,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Verify Gradle wrapper files
-        run: ls -l gradlew gradle/wrapper
-
-      - name: Fix Gradle wrapper permissions
-        run: chmod +x gradlew
+      - name: Make Gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
