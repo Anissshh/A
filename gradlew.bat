@@ -1,3 +1,5 @@
 @echo off
+:: Gradle startup script for Windows
+
 set DIR=%~dp0
-"%DIR%\gradlew" %*
+java -jar "%DIR%gradle\wrapper\gradle-wrapper.jar" %*
