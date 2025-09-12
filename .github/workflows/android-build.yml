@@ -24,10 +24,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Clean Gradle
-        run: ./gradlew clean
+        run: ./gradlew clean --no-daemon --stacktrace --info
 
       - name: Build Debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace --info --no-daemon
+        run: ./gradlew :app:assembleDebug --no-daemon --stacktrace --info
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
